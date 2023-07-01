@@ -44,6 +44,7 @@ namespace Spotify_Playlist_Downloader
             this.socialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.youtubeChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telegramChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,11 +57,11 @@ namespace Spotify_Playlist_Downloader
             this.groupBox1.Controls.Add(this.buttonGetSongs);
             this.groupBox1.Controls.Add(this.textBox_PlaylistID);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 25);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(0, 31);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(744, 72);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(992, 89);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Playlist URL or ID";
@@ -69,10 +70,10 @@ namespace Spotify_Playlist_Downloader
             // 
             this.btnDownloadAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDownloadAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDownloadAll.Location = new System.Drawing.Point(613, 13);
-            this.btnDownloadAll.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDownloadAll.Location = new System.Drawing.Point(817, 16);
+            this.btnDownloadAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDownloadAll.Name = "btnDownloadAll";
-            this.btnDownloadAll.Size = new System.Drawing.Size(120, 51);
+            this.btnDownloadAll.Size = new System.Drawing.Size(160, 63);
             this.btnDownloadAll.TabIndex = 1;
             this.btnDownloadAll.Text = "Download all";
             this.btnDownloadAll.UseVisualStyleBackColor = true;
@@ -82,10 +83,10 @@ namespace Spotify_Playlist_Downloader
             // 
             this.buttonGetSongs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonGetSongs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGetSongs.Location = new System.Drawing.Point(501, 13);
-            this.buttonGetSongs.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetSongs.Location = new System.Drawing.Point(668, 16);
+            this.buttonGetSongs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGetSongs.Name = "buttonGetSongs";
-            this.buttonGetSongs.Size = new System.Drawing.Size(108, 51);
+            this.buttonGetSongs.Size = new System.Drawing.Size(144, 63);
             this.buttonGetSongs.TabIndex = 1;
             this.buttonGetSongs.Text = "Get Songs";
             this.buttonGetSongs.UseVisualStyleBackColor = true;
@@ -96,10 +97,10 @@ namespace Spotify_Playlist_Downloader
             this.textBox_PlaylistID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_PlaylistID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_PlaylistID.Location = new System.Drawing.Point(4, 29);
-            this.textBox_PlaylistID.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_PlaylistID.Location = new System.Drawing.Point(5, 36);
+            this.textBox_PlaylistID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox_PlaylistID.Name = "textBox_PlaylistID";
-            this.textBox_PlaylistID.Size = new System.Drawing.Size(478, 21);
+            this.textBox_PlaylistID.Size = new System.Drawing.Size(636, 24);
             this.textBox_PlaylistID.TabIndex = 0;
             this.textBox_PlaylistID.TextChanged += new System.EventHandler(this.TextBox_PlaylistID_TextChanged);
             // 
@@ -109,10 +110,10 @@ namespace Spotify_Playlist_Downloader
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView_SongsList.HideSelection = false;
-            this.listView_SongsList.Location = new System.Drawing.Point(0, 102);
-            this.listView_SongsList.Margin = new System.Windows.Forms.Padding(2);
+            this.listView_SongsList.Location = new System.Drawing.Point(0, 126);
+            this.listView_SongsList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView_SongsList.Name = "listView_SongsList";
-            this.listView_SongsList.Size = new System.Drawing.Size(745, 455);
+            this.listView_SongsList.Size = new System.Drawing.Size(992, 559);
             this.listView_SongsList.TabIndex = 1;
             this.listView_SongsList.UseCompatibleStateImageBehavior = false;
             this.listView_SongsList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView_SongsList_MouseClick);
@@ -125,8 +126,8 @@ namespace Spotify_Playlist_Downloader
             this.socialToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(744, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(992, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,13 +138,13 @@ namespace Spotify_Playlist_Downloader
             this.donateToolStripMenuItem1,
             this.developedByHenryRichardJToolStripMenuItem});
             this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
-            this.donateToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
             this.donateToolStripMenuItem.Text = "About";
             // 
             // paypalToolStripMenuItem
             // 
             this.paypalToolStripMenuItem.Name = "paypalToolStripMenuItem";
-            this.paypalToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.paypalToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
             this.paypalToolStripMenuItem.Text = "Github";
             this.paypalToolStripMenuItem.Click += new System.EventHandler(this.paypalToolStripMenuItem_Click);
             // 
@@ -152,20 +153,20 @@ namespace Spotify_Playlist_Downloader
             this.donateToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.paypalToolStripMenuItem1});
             this.donateToolStripMenuItem1.Name = "donateToolStripMenuItem1";
-            this.donateToolStripMenuItem1.Size = new System.Drawing.Size(231, 22);
+            this.donateToolStripMenuItem1.Size = new System.Drawing.Size(291, 26);
             this.donateToolStripMenuItem1.Text = "Donate";
             // 
             // paypalToolStripMenuItem1
             // 
             this.paypalToolStripMenuItem1.Name = "paypalToolStripMenuItem1";
-            this.paypalToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
+            this.paypalToolStripMenuItem1.Size = new System.Drawing.Size(135, 26);
             this.paypalToolStripMenuItem1.Text = "Paypal";
             this.paypalToolStripMenuItem1.Click += new System.EventHandler(this.paypalToolStripMenuItem1_Click);
             // 
             // developedByHenryRichardJToolStripMenuItem
             // 
             this.developedByHenryRichardJToolStripMenuItem.Name = "developedByHenryRichardJToolStripMenuItem";
-            this.developedByHenryRichardJToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.developedByHenryRichardJToolStripMenuItem.Size = new System.Drawing.Size(291, 26);
             this.developedByHenryRichardJToolStripMenuItem.Text = "Developed By Henry Richard J";
             // 
             // socialToolStripMenuItem
@@ -174,33 +175,39 @@ namespace Spotify_Playlist_Downloader
             this.youtubeChannelToolStripMenuItem,
             this.telegramChannelToolStripMenuItem});
             this.socialToolStripMenuItem.Name = "socialToolStripMenuItem";
-            this.socialToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.socialToolStripMenuItem.Size = new System.Drawing.Size(63, 26);
             this.socialToolStripMenuItem.Text = "Social";
             // 
             // youtubeChannelToolStripMenuItem
             // 
             this.youtubeChannelToolStripMenuItem.Name = "youtubeChannelToolStripMenuItem";
-            this.youtubeChannelToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.youtubeChannelToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.youtubeChannelToolStripMenuItem.Text = "Youtube Channel";
             this.youtubeChannelToolStripMenuItem.Click += new System.EventHandler(this.youtubeChannelToolStripMenuItem_Click);
             // 
             // telegramChannelToolStripMenuItem
             // 
             this.telegramChannelToolStripMenuItem.Name = "telegramChannelToolStripMenuItem";
-            this.telegramChannelToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.telegramChannelToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.telegramChannelToolStripMenuItem.Text = "Telegram Channel";
             this.telegramChannelToolStripMenuItem.Click += new System.EventHandler(this.telegramChannelToolStripMenuItem_Click);
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 556);
+            this.ClientSize = new System.Drawing.Size(992, 684);
             this.Controls.Add(this.listView_SongsList);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Spotify Playlist Downloader";
             this.groupBox1.ResumeLayout(false);
@@ -228,6 +235,7 @@ namespace Spotify_Playlist_Downloader
         private System.Windows.Forms.ToolStripMenuItem youtubeChannelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem telegramChannelToolStripMenuItem;
         private System.Windows.Forms.Button btnDownloadAll;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
