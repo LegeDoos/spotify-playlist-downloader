@@ -44,7 +44,6 @@ namespace Spotify_Playlist_Downloader
             this.socialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.youtubeChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.telegramChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +126,7 @@ namespace Spotify_Playlist_Downloader
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(992, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(992, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -138,7 +137,7 @@ namespace Spotify_Playlist_Downloader
             this.donateToolStripMenuItem1,
             this.developedByHenryRichardJToolStripMenuItem});
             this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
-            this.donateToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.donateToolStripMenuItem.Text = "About";
             // 
             // paypalToolStripMenuItem
@@ -175,7 +174,7 @@ namespace Spotify_Playlist_Downloader
             this.youtubeChannelToolStripMenuItem,
             this.telegramChannelToolStripMenuItem});
             this.socialToolStripMenuItem.Name = "socialToolStripMenuItem";
-            this.socialToolStripMenuItem.Size = new System.Drawing.Size(63, 26);
+            this.socialToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.socialToolStripMenuItem.Text = "Social";
             // 
             // youtubeChannelToolStripMenuItem
@@ -191,12 +190,6 @@ namespace Spotify_Playlist_Downloader
             this.telegramChannelToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.telegramChannelToolStripMenuItem.Text = "Telegram Channel";
             this.telegramChannelToolStripMenuItem.Click += new System.EventHandler(this.telegramChannelToolStripMenuItem_Click);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.WorkerSupportsCancellation = true;
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -235,7 +228,6 @@ namespace Spotify_Playlist_Downloader
         private System.Windows.Forms.ToolStripMenuItem youtubeChannelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem telegramChannelToolStripMenuItem;
         private System.Windows.Forms.Button btnDownloadAll;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

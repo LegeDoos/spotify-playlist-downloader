@@ -7,6 +7,7 @@
     {
         Unknown,
         Downloaded,
-        Skipped
+        Skipped,
+        Started
     }
 }
